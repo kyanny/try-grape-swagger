@@ -73,7 +73,7 @@ module Twitter
           current_user.statuses.find(params[:id]).destroy
         end
       end
-      add_swagger_documentation
+      add_swagger_documentation openapi_version: '3.0'
     end
   end
 

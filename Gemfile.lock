@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/ruby-grape/grape-swagger
+  revision: 940ffe9e8f243f7f80546ac64faa7422b7d09cc3
+  branch: oapi-3
+  specs:
+    grape-swagger (0.33.0)
+      grape (>= 0.16.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -24,8 +32,6 @@ GEM
       rack (>= 1.3.0)
       rack-accept
       virtus (>= 1.0.0)
-    grape-swagger (0.33.0)
-      grape (>= 0.16.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
@@ -50,7 +56,7 @@ PLATFORMS
 
 DEPENDENCIES
   grape
-  grape-swagger
+  grape-swagger!
 
 BUNDLED WITH
    1.17.2

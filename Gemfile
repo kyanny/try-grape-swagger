@@ -6,4 +6,4 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 gem 'grape'
-gem 'grape-swagger'
+gem 'grape-swagger', github: 'ruby-grape/grape-swagger', branch: 'oapi-3'

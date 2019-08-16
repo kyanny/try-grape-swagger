@@ -1,0 +1,194 @@
+{
+  "info": {
+    "title": "API title",
+    "version": "0.0.1"
+  },
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "http://localhost:9292"
+    }
+  ],
+  "tags": [
+    {
+      "name": "statuses",
+      "description": "Operations about statuses"
+    }
+  ],
+  "paths": {
+    "/api/statuses/{id}": {
+      "delete": {
+        "description": "Delete a status.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Status ID.",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Delete a status."
+          }
+        },
+        "tags": [
+          "statuses"
+        ],
+        "operationId": "deleteApiStatusesId"
+      },
+      "put": {
+        "description": "Update a status.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Status ID.",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "description": "Your status.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "status"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Update a status.",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "tags": [
+          "statuses"
+        ],
+        "operationId": "putApiStatusesId"
+      },
+      "get": {
+        "description": "Return a status.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "Status id.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Return a status.",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "tags": [
+          "statuses"
+        ],
+        "operationId": "getApiStatusesId"
+      }
+    },
+    "/api/statuses": {
+      "post": {
+        "description": "Create a status.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "description": "Your status.",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "status"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Create a status."
+          }
+        },
+        "tags": [
+          "statuses"
+        ],
+        "operationId": "postApiStatuses"
+      }
+    },
+    "/api/statuses/home_timeline": {
+      "get": {
+        "description": "Return a personal timeline.",
+        "responses": {
+          "200": {
+            "description": "Return a personal timeline.",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "tags": [
+          "statuses"
+        ],
+        "operationId": "getApiStatusesHomeTimeline"
+      }
+    },
+    "/api/statuses/public_timeline": {
+      "get": {
+        "description": "Return a public timeline.",
+        "responses": {
+          "200": {
+            "description": "Return a public timeline.",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "tags": [
+          "statuses"
+        ],
+        "operationId": "getApiStatusesPublicTimeline"
+      }
+    }
+  }
+}
